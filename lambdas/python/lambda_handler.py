@@ -20,7 +20,7 @@ URL = os.environ["LAMBDA_FUNCTION_URL"]
 @app.get("/")
 @tracer.capture_method
 def index():
-    with open("index.html", "r") as f:
+    with open("frontend/index.html", "r") as f:
         html_text = f.read()
         html_text = html_text.replace("YOUR_LAMBDA_URL", URL)
 
